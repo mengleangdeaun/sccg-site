@@ -4,6 +4,42 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Pause marquee when hovered */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 2. Register 3D Isometric Engine (Generates hover: & dark: variants automatically) */
+@utility perspective-2000 {
+  perspective: 2000px;
+}
+@utility transform-3d {
+  transform-style: preserve-3d;
+}
+@utility rotate-iso {
+  transform: rotateY(-15deg) rotateX(10deg);
+}
+@utility rotate-iso-hover {
+  transform: rotateY(-5deg) rotateX(10deg);
+}
+
+/* Z-Axis Depth Layers */
+@utility tz-80 { transform: translateZ(80px); }
+@utility tz-60 { transform: translateZ(60px); }
+@utility tz-40 { transform: translateZ(40px); }
+@utility tz-20 { transform: translateZ(20px); }
+@utility tz-0  { transform: translateZ(0px); }
+@utility tz-neg-20 { transform: translateZ(-20px); }
+
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
@@ -48,8 +84,6 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
@@ -80,6 +114,8 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
 }
 
 .dark {
@@ -115,6 +151,7 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
 }
+
 
 @layer base {
   * {
