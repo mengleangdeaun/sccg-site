@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 // Mock data updated for Employee/Team Activities
 const galleryData = [
   {
     id: "01",
     url: "/gallery/IMG_2970.jpg",
-    caption: "Staff Capacity Building",
+    caption: "Chinese New Year",
     location: "Phnom Penh",
   },
   {
@@ -83,10 +84,12 @@ export default function GallerySection() {
                 index === currentIndex ? "opacity-100 z-0" : "opacity-0 -z-10 pointer-events-none"
               }`}
             >
-              <img
+              <Image
                 src={slide.url}
                 alt={slide.caption}
-    
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                priority={index === 0}
                 className="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>
