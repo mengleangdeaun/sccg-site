@@ -7,7 +7,7 @@ import Image from "next/image";
 const galleryData = [
   {
     id: "01",
-    url: "/gallery/IMG_2970.jpg",
+    url: "/gallery/IMG_2970.JPG",
     caption: "Chinese New Year",
     location: "Phnom Penh",
   },
@@ -19,25 +19,25 @@ const galleryData = [
   },
   {
     id: "03",
-    url: "/gallery/IMG_2959.jpg",
+    url: "/gallery/IMG_2959.JPG",
     caption: "Chinese New Year",
     location: "Phnom Penh",
   },
   {
     id: "04",
-    url: "/gallery/IMG_2989.jpg",
+    url: "/gallery/IMG_2989.JPG",
     caption: "Chinese New Year",
     location: "Phnom Penh",
   },
   {
     id: "05",
-    url: "/gallery/IMG_2971.jpg",
+    url: "/gallery/IMG_2971.JPG",
     caption: "Chinese New Year",
     location: "Phnom Penh",
   },
   {
     id: "06",
-    url: "/gallery/IMG_2969.jpg",
+    url: "/gallery/IMG_2969.JPG",
     caption: "Chinese New Year",
     location: "Phnom Penh",
   },
