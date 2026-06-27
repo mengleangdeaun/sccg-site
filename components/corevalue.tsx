@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 const values = [
   {
     icon: (
@@ -58,66 +60,78 @@ const values = [
 
 const COLS = 3;
 
-function CornerDot({ position }: { position: "tl" | "tr" | "bl" | "br" }) {
-  const pos = {
-    tl: "-top-px -left-px",
-    tr: "-top-px -right-px",
-    bl: "-bottom-px -left-px",
-    br: "-bottom-px -right-px",
-  }[position];
-  return <span className={`absolute w-2 h-2 bg-red-600 dark:bg-red-500 z-10 ${pos}`} />;
+function Dot({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "absolute w-[6px] h-[6px] bg-red-600 dark:bg-red-500 z-20 pointer-events-none",
+        className
+      )}
+    />
+  );
 }
 
 export default function CoreValuesBento() {
   return (
-    /**
-     * Border strategy:
-     * - `outline` on wrapper = outer frame (lives outside box model, never collides with children)
-     * - Every cell draws `border-top` + `border-left`
-     * - Strip first-row top (nth-child 1-3) and first-col left (nth-child 3n+1)
-     * - Footer is unaffected by any of those selectors
-     */
-    <div
-      className="relative grid grid-cols-1 md:grid-cols-3 outline-1 outline-zinc-200 dark:outline-white/10"
-    >
-      <CornerDot position="tl" />
-      <CornerDot position="tr" />
-      <CornerDot position="bl" />
-      <CornerDot position="br" />
+    <div className="space-y-0">
+      {/* Grid container */}
+      <div className="relative grid grid-cols-1 md:grid-cols-3 bg-white dark:bg-zinc-950">
+        {/* Outer vertical lines (extend 24px top/bottom) */}
+        <span className="absolute left-0 top-[-24px] bottom-[-24px] w-px bg-zinc-200 dark:bg-white/10 pointer-events-none z-10" />
+        <span className="absolute right-0 top-[-24px] bottom-[-24px] w-px bg-zinc-200 dark:bg-white/10 pointer-events-none z-10" />
 
-      {values.map((v, i) => {
-        const col = i % COLS;
-        const isFirstRow = i < COLS;
-        const isFirstCol = col === 0;
-        const isAlt = i % 2 !== 0;
+        {/* Column divider vertical lines (extend 24px top/bottom) */}
+        <span className="absolute left-[33.333%] top-[-24px] bottom-[-24px] w-px bg-zinc-200 dark:bg-white/10 hidden md:block pointer-events-none z-10" />
+        <span className="absolute left-[66.667%] top-[-24px] bottom-[-24px] w-px bg-zinc-200 dark:bg-white/10 hidden md:block pointer-events-none z-10" />
 
-        return (
-          <div
-            key={v.name}
-            className={[
-              "p-7",
-              isAlt ? "bg-gray-100 dark:bg-zinc-900" : "bg-white dark:bg-zinc-950",
-              // top+left on all; suppress where outline already provides the edge
-              !isFirstRow ? "border-t border-zinc-200 dark:border-white/10" : "",
-              !isFirstCol ? "md:border-l border-zinc-200 dark:border-white/10" : "",
-            ]
-              .filter(Boolean)
-              .join(" ")}
-          >
-            <span className="text-red-600 dark:text-red-400 mb-3 block">{v.icon}</span>
-            <p className="text-xs font-semibold tracking-widest uppercase text-red-600 dark:text-red-400 mb-2">
-              {v.name}
-            </p>
-            <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
-              {v.desc}
-            </p>
-          </div>
-        );
-      })}
+        {/* Full-width Line 1: Top boundary horizontal line (full viewport width) */}
+        <span className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-px bg-zinc-200 dark:bg-white/10 pointer-events-none z-10" />
 
-      {/* Footer */}
-      <div className="md:col-span-3 border-t border-zinc-200 dark:border-white/10 bg-white dark:bg-zinc-900/40 p-7 flex items-center justify-center">
-        <p className="text-sm bg-linear-to-r font-bold from-rose-500 via-red-500 to-orange-500 bg-clip-text text-transparent uppercase tracking-widest">
+        {/* Full-width Line 2: Bottom boundary horizontal line of cards / top of footer (full viewport width) */}
+        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-px bg-zinc-200 dark:bg-white/10 pointer-events-none z-10" />
+
+        {/* The 4 Red Intersections Dots (Placed only on the 4 outer nodes/corners of the grid) */}
+        <Dot className="top-[-3px] left-[-3px]" />
+        <Dot className="top-[-3px] right-[-3px]" />
+        <Dot className="bottom-[-3px] left-[-3px]" />
+        <Dot className="bottom-[-3px] right-[-3px]" />
+
+        {values.map((v, i) => {
+          const col = i % COLS;
+
+          return (
+            <div
+              key={v.name}
+              className="p-7 relative bg-white dark:bg-zinc-950"
+            >
+              {/* Mobile horizontal divider line */}
+              {i > 0 && (
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-px bg-zinc-200 dark:bg-white/10 pointer-events-none md:hidden z-10" />
+              )}
+              
+              {/* Desktop horizontal divider line (shown only on second row, NOT full width!) */}
+              {i >= 3 && (
+                <span className="absolute top-0 left-0 right-0 h-px bg-zinc-200 dark:bg-white/10 pointer-events-none hidden md:block z-10" />
+              )}
+
+              <span className="text-red-600 dark:text-red-400 mb-3 block">{v.icon}</span>
+              <p className="text-xs font-semibold tracking-widest uppercase text-red-600 dark:text-red-400 mb-2">
+                {v.name}
+              </p>
+              <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+                {v.desc}
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Footer (outside the cards grid) */}
+      <div className="relative bg-white dark:bg-zinc-900/40 p-7 flex items-center justify-center">
+        {/* Footer Bottom Border (not full width) */}
+        <span className="absolute bottom-0 left-0 right-0 h-px bg-zinc-200 dark:bg-white/10 pointer-events-none z-10" />
+
+        <p className="text-sm bg-linear-to-r font-bold from-rose-500 via-red-500 to-orange-500 bg-clip-text text-transparent uppercase text-center">
           We believe we are gifted with great talents to make this place a better world!
         </p>
       </div>

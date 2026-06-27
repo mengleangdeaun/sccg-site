@@ -1,10 +1,10 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
 
 interface DepartmentMission {
   id: string;
   dept: string;
-  tag: string;
   en: string;
   kh: string;
   highlight?: boolean;
@@ -14,63 +14,54 @@ const mandates: DepartmentMission[] = [
   {
     id: "01",
     dept: "Human Resources",
-    tag: "HR Mission 2025",
     en: "To attract, develop, and retain talented people who drive our company’s growth and success.",
     kh: "ដើម្បីទាក់ទាញ អភិវឌ្ឈ និងរក្សាទុកបុគ្គលិកដែលមានសមត្ថភាព ដើម្បីជំរុញភាពរីកចំរើន និងជោគជ័យរបស់ក្រុមហ៊ុន។",
   },
   {
     id: "02",
     dept: "Admin Operations",
-    tag: "Systemic Care",
     en: "We serve with care, manage with system, and support with heart.",
     kh: "យើងបម្រើដោយការយកចិត្តទុកដាក់ គ្រប់គ្រងដោយប្រព័ន្ធ និងគាំទ្រដោយបេះដូង។",
   },
   {
     id: "03",
     dept: "Marketing",
-    tag: "Market Benchmark",
     en: "To drive business growth through bold creativity, smart digital engagement, and marketing innovation that sets new benchmarks in our industry.",
     kh: "ដើម្បីជំរុញអាជីវកម្មឲ្យរីកចម្រើន តាមរយៈសិល្បៈនៃការច្នៃប្រឌិតដ៏មានឥទ្ធិពល ជាមួយការចូលរួមក្នុងឌីជីជលដ៏ឆ្លាតវៃ និងការច្នៃប្រឌិតផ្នែកទីផ្សារ ដែលបង្កើតស្តង់ដាថ្មីក្នុងវិស័យការងាររបស់យើង។",
   },
   {
     id: "04",
     dept: "Product Intelligence",
-    tag: "Knowledge Hub",
     en: "To be the knowledge hub of the company by deeply understanding every product, educating our customers, and empowering our teams with the right insights to succeed.",
     kh: "ជាបណ្តុំចំណេះដឹងរបស់ក្រុមហ៊ុន ដោយយល់ដឹងស៊ីជំរៅអំពីផលិតផលទាំងអស់ ផ្តល់កាណែនំាប្រឹក្សាដល់អតិថិជន និងបង្កើនសមត្ថភាពក្រុមការងាររបស់យើងជាមួយនឹងចំណេះដឹងត្រឹមត្រូវដើម្បីទទួលបានជោគជ័យ។",
   },
   {
     id: "05",
     dept: "Supply & Logistics",
-    tag: "Final Touchpoint",
     en: "To be the final touchpoint that leaves a lasting impression—ensuring each delivery reflects our dedication to care, quality, and customer satisfaction.",
     kh: "ដើម្បីជាការបញ្ចប់ការងារ ដែលផ្ដល់អារម្មណ៍ល្អចំពោះអតិថិជន ដោយធានាថាការដឹកជញ្ជូននីមួយៗបង្ហាញពីការយកចិត្តទុកដាក់ ប្រុងប្រយ័ត្នពីគុណភាពលើផលិតផល និងការពេញចិត្តរបស់អតិថិជន។",
   },
   {
     id: "06",
     dept: "Commercial Sales",
-    tag: "Problem Solvers",
     en: "We listen first, solve fast, and offer products/services that solve clients problems.",
     kh: "យើងស្តាប់ជាមុនសិន បន្ទាប់មកដោះស្រាយយ៉ាងរហ័ស និងផ្ដល់នូវផលិតផល/សេវាកម្មដែលដោះស្រាយបញ្ហារបស់អតិថិជន។",
   },
   {
     id: "07",
     dept: "Warehouse Inventory",
-    tag: "Accountability",
     en: "To manage and maintain inventory with accuracy, efficiency, and accountability.",
     kh: "ដើម្បីគ្រប់គ្រងនិងរក្សាសារពើភ័ណ្ឌ គឺគ្រប់គ្រងយ៉ាងសកម្ម និងទ្រទ្រង់បរិមាណត្រឹមត្រូវនៃស្ដុក(ផលិតផល និងសម្ភារៈ) ជាមួយនឹងភាពត្រឹមត្រូវ ប្រសិទ្ធភាព និង ការទទួលខុសត្រូវ។",
   },
   {
     id: "08",
     dept: "Creative Department",
-    tag: "Inspiring Speed",
     en: "Our mission is to bring ideas to life with speed, style, and storytelling that inspires.",
     kh: "បេសកកម្មរបស់យើងគឺដើម្បីពាំនាំគំនិតឲ្យក្លាយទៅជាការពិត ដោយភាពរហ័ស មានបច្ចេកទេស និងរឿងរ៉ាវដែលបំផុសគំនិតល្អៗ។",
   },
   {
     id: "09",
     dept: "Customer Service",
-    tag: "Premium Experience",
     en: "To provide a seamless, personalized, and exceptional service experience that reflects the premium quality of our brand and exceeds the expectations of every valued customer.",
     kh: "ផ្តល់ជូនបទពិសោធន៍សេវាកម្មដ៏រលូន ភាពផ្ទាល់ខ្លួន និងល្អឥតខ្ចោះដែលឆ្លុះបង្ហាញពីគុណភាពស្តង់ដារកម្រិតខ្ពស់នៃកេរ្តិ៍ឈ្មោះក្រុមហ៊ុនរបស់យើង និងលើសពីការរំពឹងទុករបស់អតិថិជនគ្រប់រូប។",
   },
@@ -125,12 +116,9 @@ export default function CareersPage() {
         ========================================================== */}
         <div className="mb-24">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xs uppercase tracking-[0.25em] text-zinc-500">
-              Departmental Mission Matrix
-            </h2>
-            <span className="text-[10px] text-red-600 dark:text-red-500 font-bold uppercase">
-              Systemic Clarity
-            </span>
+        <p className="font-mono text-lg sm:text-xl tracking-widest font-bold uppercase text-red-600 dark:text-red-500">
+          <span className="w-2 h-2 bg-red-600 inline-block mb-1"></span> Departmental Mission Matrix
+        </p> 
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -143,30 +131,28 @@ export default function CareersPage() {
                     : "border-zinc-200 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/30"
                 }`}
               >
+                 <div className="absolute right-0 bottom-0 w-12 h-3 bg-red-500" />
                 {/* Interactive Top Border Glow */}
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
 
                 <div>
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <span className="text-[9px] tracking-widest uppercase text-red-600 dark:text-red-400 block mb-1">
-                        {item.tag}
-                      </span>
-                      <h3 className="text-base font-bold tracking-tight text-zinc-900 dark:text-white uppercase">
+                      <h3 className="text-base font-bold tracking-tight text-red-600 dark:text-red-500 uppercase">
                         {item.dept}
                       </h3>
                     </div>
                   </div>
 
                   {/* English Mandate (Primary) */}
-                  <p className="text-xs font-medium text-zinc-800 dark:text-zinc-200 leading-relaxed mb-6">
+                  <p className="text-xs font-medium text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                     &quot;{item.en}&quot;
                   </p>
                 </div>
 
                 {/* Khmer Mandate (Secondary Translation) */}
                 <div className="pt-4 border-t border-zinc-100 dark:border-white/5 mt-auto">
-                  <p className="text-[11px] font-light text-zinc-500 dark:text-zinc-400 leading-normal font-sans">
+                  <p className="text-xs font-semibold text-zinc-600 dark:text-zinc-400 leading-normal font-sans">
                     {item.kh}
                   </p>
                 </div>
@@ -209,6 +195,8 @@ export default function CareersPage() {
         </div>
 
       </main>
+      
+      <Footer />
 
     </div>
   );

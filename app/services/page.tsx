@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
 
@@ -66,11 +67,12 @@ export default function ServicesPage() {
               key={i}
               className="group p-8 bg-white/80 dark:bg-zinc-900/50 backdrop-blur-sm border border-zinc-200 dark:border-white/10 hover:border-red-500/50 transition-all duration-300 relative"
             >
+              <div className="absolute right-0 bottom-0 w-12 h-3 bg-red-500" />
               {/* Glowing Top Border Effect on Hover */}
               <div className="absolute top-0 left-0 w-full h-[2px] bg-red-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
 
               <div className="flex items-start justify-between mb-8">
-                <h3 className="text-sm font-bold tracking-wide text-zinc-900 dark:text-white uppercase">
+                <h3 className="text-sm font-bold tracking-wide text-red-600 dark:text-red-500 uppercase">
                   {v.cat}
                 </h3>
               </div>
@@ -91,16 +93,7 @@ export default function ServicesPage() {
 
       </main>
 
-      <footer className="relative z-10 border-t border-zinc-200 dark:border-white/10 py-12 bg-zinc-50 dark:bg-zinc-950 text-zinc-500 text-xs">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-medium tracking-widest text-zinc-900 dark:text-white uppercase">
-            SCC Group Cambodia
-          </div>
-          <div className="font-mono tracking-widest uppercase">
-            © 2026 All Rights Reserved.
-          </div>
-        </div>
-      </footer>
+  <Footer />
     </div>
   );
 }

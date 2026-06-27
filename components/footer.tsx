@@ -45,7 +45,14 @@ export default function Footer() {
             Phnom Penh, Kingdom of Cambodia
           </p>
           <div className="text-[10px] font-mono text-zinc-400">
-            GEO: 11.55556768380531, 104.90690015252773
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=11.55556768380531,104.90690015252773"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200"
+            >
+              GEO: 11.55556768380531, 104.90690015252773
+            </a>
           </div>
         </div>
 

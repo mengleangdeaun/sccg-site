@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -10,7 +11,7 @@ export default function HeroSection() {
         <div className="space-y-8 text-left max-w-2xl">
           
         <h1 className="text-5xl sm:text-6xl md:text-[4rem] font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.2]">
-        Controlling <span className="text-red-600 dark:text-red-500">heat</span>.<br />
+        Controlling <span className="text-red-600 dark:text-red-500">HEAT</span>.<br />
         Empowering{" "}
         <span className="text-red-600 dark:text-red-500 ">
             CAMBODIA
@@ -37,49 +38,19 @@ We offer high-quality, scientifically verified materials and integration service
           </div>
         </div>
 
-{/* RIGHT COLUMN: The "Infrastructure Stack" Graphic (Clean v4 Classes) */}
-        <div className="relative hidden lg:flex justify-center items-center h-[500px] w-full perspective-2000">
-          
-          <div className="relative w-full max-w-[400px] h-full transform-3d rotate-iso transition-transform duration-700 hover:rotate-iso-hover">
+        {/* RIGHT COLUMN: Cambodia Map Graphic */}
+        <div className="relative hidden lg:flex justify-center items-center w-full">
+          <div className="relative w-full max-w-[500px] rounded-none overflow-hidden flex items-center justify-center h-[500px]">
             
-            {/* Top Layer: Surface Armor */}
-            <div className="absolute top-[10%] left-0 w-full h-[120px] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200 dark:border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transform translate-y-0 tz-60 flex items-center px-8 transition-transform duration-500 hover:tz-80">
-              <div className="flex items-center gap-4 w-full">
-                <div className="w-10 h-10 bg-red-600/10 border border-red-600/20 flex items-center justify-center text-red-600 font-mono text-xs">01</div>
-                <div>
-                  <div className="text-xs font-bold tracking-widest uppercase text-zinc-900 dark:text-white">Surface Armor</div>
-                  <div className="text-[10px] text-zinc-500">Glaze & Window Films</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Layer: The Core (Red Accent) */}
-            <div className="absolute top-[35%] left-0 w-full h-[140px] bg-red-600 border border-red-500 shadow-[0_20px_50px_rgba(220,38,38,0.2)] transform translate-y-0 tz-20 flex items-center justify-center transition-transform duration-500 hover:tz-40">
-              <div className="text-white text-3xl font-bold tracking-tighter">
-                Thermal Core
-              </div>
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
-            </div>
-
-            {/* Bottom Layer: Acoustic & Base */}
-            <div className="absolute top-[65%] left-0 w-full h-[120px] bg-zinc-100/90 dark:bg-zinc-950/90 backdrop-blur-md border border-zinc-200 dark:border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.05)] transform translate-y-0 tz-neg-20 flex items-center px-8 transition-transform duration-500 hover:tz-0">
-               <div className="flex items-center justify-between w-full">
-                  <div>
-                    <div className="text-xs font-bold tracking-widest uppercase text-zinc-900 dark:text-white">Acoustic Base</div>
-                    <div className="text-[10px] text-zinc-500">Rockwool & Insulation</div>
-                  </div>
-                  <div className="flex gap-2">
-                     <div className="w-6 h-6 border border-zinc-300 dark:border-zinc-700"></div>
-                     <div className="w-6 h-6 border border-zinc-300 dark:border-zinc-700"></div>
-                  </div>
-              </div>
-            </div>
-
-            {/* Connecting Lines */}
-            <div className="absolute top-[40%] -left-16 w-16 h-px bg-zinc-300 dark:bg-zinc-700"></div>
-            <div className="absolute top-[40%] -left-16 w-px h-[200px] bg-zinc-300 dark:bg-zinc-700"></div>
-            <div className="absolute bottom-[20%] -left-16 w-8 h-px bg-zinc-300 dark:bg-zinc-700"></div>
-            
+            {/* Map Image */}
+            <Image 
+              src="/Cambodia2.svg" 
+              alt="Cambodia Map" 
+              width={500}
+              height={500}
+              priority
+              className="relative z-10 w-full h-full max-h-[420px] object-contain transition-all duration-700 hover:scale-[1.03] dark:opacity-90 dark:brightness-[1.1] filter"
+            />
           </div>
         </div>
 

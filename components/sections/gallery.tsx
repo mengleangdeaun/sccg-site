@@ -6,27 +6,39 @@ import { useState } from "react";
 const galleryData = [
   {
     id: "01",
-    url: "/gallery/staff-capacity-building.jpg",
+    url: "/gallery/IMG_2970.jpg",
     caption: "Staff Capacity Building",
-    location: "Phnom Penh HQ",
+    location: "Phnom Penh",
   },
   {
     id: "02",
     url: "/gallery/photo_2026-06-24_17-13-13.jpg",
     caption: "Staff Capacity Building",
-    location: "Phnom Penh HQ",
+    location: "Phnom Penh",
   },
   {
     id: "03",
-    url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80",
-    caption: "Annual Team Integration Retreat",
-    location: "Coastal Facility",
+    url: "/gallery/IMG_2959.jpg",
+    caption: "Chinese New Year",
+    location: "Phnom Penh",
   },
   {
     id: "04",
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80",
-    caption: "Field Engineering Coordination",
-    location: "On-site Deployment",
+    url: "/gallery/IMG_2989.jpg",
+    caption: "Chinese New Year",
+    location: "Phnom Penh",
+  },
+  {
+    id: "05",
+    url: "/gallery/IMG_2971.jpg",
+    caption: "Chinese New Year",
+    location: "Phnom Penh",
+  },
+  {
+    id: "06",
+    url: "/gallery/IMG_2969.jpg",
+    caption: "Chinese New Year",
+    location: "Phnom Penh",
   },
 ];
 
