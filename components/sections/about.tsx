@@ -44,12 +44,12 @@ export default function AboutSection() {
     },
     {
       title: "The Dream",
-      text: "A vibrant international enterprise combining exceptional talent across cultures — creating infrastructure that permanently elevates human quality of life.",
+      text: "SCC Group will be a vibrant international company that combines people with great talents from different culture and expertise to make meaningful and valuable products , services that will improve the quality of life for our customers",
     },
   ].map((item) => (
     <div
       key={item.title}
-      className="relative border border-zinc-200 dark:border-white/10 p-6 pr-10 text-left hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors"
+      className="relative border border-zinc-200 dark:border-white/10 p-6 pr-10 text-left bg-white hover:bg-gray-100 dark:bg-neutral-950 dark:hover:bg-neutral-900 transition-colors"
     >
       {/* Short vertical red line – like a badge flag in the top-right */}
       <div className="absolute right-0 bottom-0 w-12 h-3 bg-red-500" />

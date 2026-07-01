@@ -68,10 +68,6 @@ export default function Footer() {
               <span className="text-zinc-900 dark:text-white font-medium">+855 (0) 89 222 027</span>
             </div>
             <div className="flex justify-between border-b border-zinc-200 dark:border-white/5 pb-1.5">
-              <span className="text-zinc-400">Phone Number:</span>
-              <span className="text-zinc-900 dark:text-white font-medium">+855 (0) 89 222 027</span>
-            </div>
-            <div className="flex justify-between border-b border-zinc-200 dark:border-white/5 pb-1.5">
               <span className="text-zinc-400">Email:</span>
               <span className="text-red-600 dark:text-red-400 font-bold">sccg.cambodia@gmail.com</span>
             </div>

@@ -1,46 +1,43 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 // Mock data updated for Employee/Team Activities
 const galleryData = [
   {
     id: "01",
-    url: "/gallery/IMG_2970.JPG",
-    caption: "Chinese New Year",
+    url: "/gallery/tbd/photo_2023-12-25_13-18-42.jpg",
+    caption: "",
     location: "Phnom Penh",
   },
   {
     id: "02",
-    url: "/gallery/photo_2026-06-24_17-13-13.jpg",
+    url: "/gallery/training/photo_2026-05-06_17-45-06 (2).jpg",
     caption: "Staff Capacity Building",
     location: "Phnom Penh",
   },
   {
     id: "03",
-    url: "/gallery/IMG_2959.JPG",
-    caption: "Chinese New Year",
+    url: "/gallery/training/photo_2026-06-04_17-36-51.jpg",
+    caption: "Staff Capacity Building",
     location: "Phnom Penh",
   },
-  {
+    {
     id: "04",
-    url: "/gallery/IMG_2989.JPG",
-    caption: "Chinese New Year",
+    url: "/gallery/IMG_2945.JPG",
+    caption: "Chinese New Year Event",
     location: "Phnom Penh",
   },
-  {
+      {
     id: "05",
-    url: "/gallery/IMG_2971.JPG",
-    caption: "Chinese New Year",
+    url: "/gallery/IMG_2959.JPG",
+    caption: "Chinese New Year Event",
     location: "Phnom Penh",
   },
-  {
-    id: "06",
-    url: "/gallery/IMG_2969.JPG",
-    caption: "Chinese New Year",
-    location: "Phnom Penh",
-  },
+
+
 ];
 
 export default function GallerySection() {
@@ -74,7 +71,7 @@ export default function GallerySection() {
 {/* 2. Full Bleed Image Viewer (100vw) */}
       <div className="w-full border-y border-zinc-200 dark:border-white/10 select-none">
         
-        <div className="relative h-[55vh] md:h-[70vh] w-full overflow-hidden group cursor-crosshair">
+        <div className="relative h-[55vh] md:h-[80vh] w-full overflow-hidden group cursor-crosshair">
           
      
           {galleryData.map((slide, index) => (
@@ -88,7 +85,6 @@ export default function GallerySection() {
                 src={slide.url}
                 alt={slide.caption}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                 priority={index === 0}
                 className="w-full h-full object-cover mix-blend-luminosity group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700 ease-out"
               />
@@ -146,6 +142,8 @@ export default function GallerySection() {
                 / {galleryData.length.toString().padStart(2, "0")} ]
               </div>
 
+
+
               {/* Prev / Next Buttons */}
               <div className="flex gap-2">
                 <button
@@ -166,6 +164,12 @@ export default function GallerySection() {
                     <path strokeLinecap="square" strokeLinejoin="miter" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+                <Link
+                href="/gallery"
+                className="h-9 w-24 text-sm font-bold flex items-center justify-center bg-gray-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 text-zinc-600 dark:text-zinc-400 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white dark:hover:border-red-600 transition-colors rounded-none"
+              >
+                View more
+              </Link>
               </div>
 
             </div>

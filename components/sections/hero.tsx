@@ -30,7 +30,7 @@ We offer high-quality, scientifically verified materials and integration service
               Explore Portfolios <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
-              href="#about"
+              href="/about"
               className="px-6 py-3.5 bg-transparent text-zinc-900 dark:text-white text-sm font-medium tracking-wide border border-zinc-200 dark:border-white/20 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors rounded-none"
             >
               View corporate mandate

@@ -19,7 +19,7 @@ const verticals = [
 
 export default function ServicesPage() {
   return (
-    <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans antialiased transition-colors duration-300">
+    <div className="relative min-h-screen bg-gray-100 dark:bg-neutral-900 text-gray-900 dark:text-gray-50 font-sans selection:bg-red-500 selection:text-white antialiased transition-colors duration-300">
       
       {/* Engineering Grid Background */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
@@ -28,12 +28,12 @@ export default function ServicesPage() {
 
       <main className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-24">
         
-        <div className="mb-20 border-b border-zinc-200 dark:border-white/10 pb-16">
+        <div className="mb-8 pb-8">
           
           {/* Kinetic Terminal Breadcrumb */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-red-600 transition-colors mb-8 uppercase tracking-widest"
+            className="inline-flex items-center px-3 py-2 gap-2 text-sm font-bold text-red-500 hover:text-red-600 transition-colors mb-8 uppercase"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="currentColor" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="currentColor"></path></svg> Return
           </Link>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
           {verticals.map((v, i) => (
             <div
               key={i}
-              className="group p-8 bg-white/80 dark:bg-zinc-900/50 backdrop-blur-sm border border-zinc-200 dark:border-white/10 hover:border-red-500/50 transition-all duration-300 relative"
+              className="group p-8 bg-white dark:bg-zinc-950 backdrop-blur-sm border transition-all duration-300 relative"
             >
               <div className="absolute right-0 bottom-0 w-12 h-3 bg-red-500" />
               {/* Glowing Top Border Effect on Hover */}
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                 {v.items.map((item, itemIdx) => (
                   <span
                     key={itemIdx}
-                    className="px-2 py-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-white/5 text-[10px] text-zinc-600 dark:text-zinc-300 rounded-none"
+                    className="px-2 py-1 bg-gray-50 dark:bg-zinc-900 border text-[10px] text-zinc-600 dark:text-zinc-300 rounded-none"
                   >
                     {item}
                   </span>
