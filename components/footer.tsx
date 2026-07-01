@@ -38,7 +38,7 @@ export default function Footer() {
         {/* Col A: Headquarters */}
         <div className="space-y-3">
           {/* OPTIMIZATION: Shifted light mode text from zinc-400 to zinc-600 */}
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Headquarters
           </div>
@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* Col B: Telecommunications */}
         <div className="space-y-3">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Contact Us
           </div>
@@ -80,7 +80,7 @@ export default function Footer() {
 
         {/* Col C: Social Nodes */}
         <div className="space-y-3 flex flex-col items-start md:items-end md:text-right">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-700 dark:text-zinc-300 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Our Socials
           </div>
@@ -139,9 +139,9 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             <span className="tracking-wider text-zinc-800 dark:text-zinc-300 font-semibold">SCC GROUP CAMBODIA</span>
-            <span className="text-zinc-500 dark:text-zinc-600">• SINGAPORE COLLABORATION</span>
+            <span className="text-zinc-700 dark:text-zinc-300">• SINGAPORE COLLABORATION</span>
           </div>
-          <div className="tracking-widest uppercase opacity-70 text-zinc-700 dark:text-inherit">
+          <div className="tracking-widest uppercase text-zinc-800 dark:text-zinc-200">
             © {currentYear} ALL RIGHTS RESERVED.
           </div>
         </div>
