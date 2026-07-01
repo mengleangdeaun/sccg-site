@@ -59,7 +59,7 @@ export default function Navbar() {
           {/* =========================================================
               DESKTOP NAV (Option 2 + Route Reader Engine)
           ========================================================== */}
-          <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-widest">
+          <div className="hidden md:flex items-center gap-8 text-[11px] uppercase font-bold tracking-wide">
             {navLinks.map((link) => {
               // Matches exact URL, or any sub-page inside that sector (e.g. /services/film)
               const isActive =
@@ -70,10 +70,10 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`group relative inline-flex h-9 items-center px-1 font-semibold transition-colors rounded-none ${
+                  className={`group relative inline-flex h-9 items-center px-1 font-bold transition-colors rounded-none ${
                     isActive
                       ? "text-zinc-900 dark:text-white"
-                      : "text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white"
+                      : "text-gray-800 hover:text-zinc-900 dark:text-gray-200 dark:hover:text-white"
                   }`}
                 >
                   {link.name}

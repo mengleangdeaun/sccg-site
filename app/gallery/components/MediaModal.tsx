@@ -1,4 +1,7 @@
+"use client";
+
 import { useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import type { GalleryItem } from "../data/galleryData";
 import Image from 'next/image';
@@ -31,23 +34,22 @@ export default function MediaModal({ item, onClose, onPrev, onNext }: MediaModal
     };
   }, [item, handleKeyDown]);
 
-  if (!item) return null;
+  // 1. Bail out early if there's no item OR if we're somehow rendering on the server
+  if (!item || typeof document === 'undefined') return null;
 
-  return (
+  // 2. Safely render the portal directly to the body
+  return createPortal(
     <div
-      className="fixed inset-0 z-[999] flex items-center justify-center p-4 sm:p-8"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8"
       onClick={onClose}
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/90 backdrop-blur-xl animate-fade-in" />
 
-      {/* Content Wrapper - w-fit hugs the content, negative positions push buttons outside */}
       <div
         className="relative z-10 flex max-h-[85vh] w-fit max-w-[calc(100vw-6rem)] md:max-w-4xl flex-col items-center animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
-        
-        {/* Close button (Just above the top right corner) */}
         <button
           onClick={onClose}
           className="absolute -top-12 right-0 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:h-10 sm:w-10"
@@ -58,7 +60,6 @@ export default function MediaModal({ item, onClose, onPrev, onNext }: MediaModal
           </svg>
         </button>
 
-        {/* Previous button (Just outside the left edge) */}
         <button
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
           className="absolute top-1/2 -left-12 sm:-left-16 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:h-12 sm:w-12"
@@ -68,7 +69,6 @@ export default function MediaModal({ item, onClose, onPrev, onNext }: MediaModal
           </svg>
         </button>
         
-        {/* Next button (Just outside the right edge) */}
         <button
           onClick={(e) => { e.stopPropagation(); onNext(); }}
           className="absolute top-1/2 -right-12 sm:-right-16 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:h-12 sm:w-12"
@@ -93,6 +93,8 @@ export default function MediaModal({ item, onClose, onPrev, onNext }: MediaModal
             alt={item.title}
             width={1920}
             height={1080}
+            priority 
+            quality={90}
             className="max-h-[70vh] w-auto max-w-full rounded-none object-contain shadow-2xl"
           />
         )}
@@ -117,6 +119,7 @@ export default function MediaModal({ item, onClose, onPrev, onNext }: MediaModal
           </p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

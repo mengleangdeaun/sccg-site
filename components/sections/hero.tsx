@@ -24,14 +24,14 @@ We offer high-quality, scientifically verified materials and integration service
 
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <Link
-              href="#services"
-              className="px-6 py-3.5 bg-red-600 text-white text-sm font-medium tracking-wide hover:bg-red-500 transition-colors border border-red-600 rounded-none shadow-[0_0_20px_rgba(220,38,38,0.2)] hover:shadow-[0_0_30px_rgba(220,38,38,0.4)] flex items-center gap-2"
+              href="/services"
+              className="px-6 py-3.5 bg-red-600 text-white text-sm font-medium tracking-wide hover:bg-red-500 transition-colors border border-red-600 rounded-none flex items-center gap-2"
             >
-              Explore Portfolios <span aria-hidden="true">&rarr;</span>
+              Explore Service <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
               href="/about"
-              className="px-6 py-3.5 bg-transparent text-zinc-900 dark:text-white text-sm font-medium tracking-wide border border-zinc-200 dark:border-white/20 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors rounded-none"
+              className="px-6 py-3.5 bg-white hover:bg-gray-100 hover:dark:bg-zinc-900 dark:bg-zinc-950 text-zinc-900 dark:text-white border text-sm font-medium tracking-wide transition-colors rounded-none"
             >
               View corporate mandate
             </Link>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import type { GalleryItem } from "../data/galleryData";
@@ -75,33 +77,28 @@ export default function BentoGrid({ items, onItemClick }: BentoGridProps) {
             key={item.id}
             onClick={() => onItemClick(item)}
             className={cn(
-              "group relative cursor-pointer overflow-hidden rounded-none bg-slate-800 transition-all duration-300",
+              "group relative cursor-pointer overflow-hidden rounded-none bg-slate-900 transition-all duration-300",
               getSizeClasses(item.size),
               isVisible
                 ? "translate-y-0 opacity-100 scale-100"
                 : "translate-y-8 opacity-0 scale-95"
             )}
           >
-            {/* Image */}
+            {/* OPTIMIZATION: Switched to 'fill' layout with 'sizes' property */}
             <Image
               src={item.thumbnail}
               alt={item.title}
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              loading="lazy"
-              width={1920}
-              height={1080}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
 
-            {/* Dark overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
 
-            {/* Play button for videos */}
             {item.type === "video" && <PlayIcon />}
 
-            {/* Bottom info */}
             <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end p-3 sm:p-4">
               <div className="translate-y-2 transition-transform duration-300 group-hover:translate-y-0">
-                {/* Type badge */}
                 <div className="mb-2 flex items-center gap-1.5">
                   <span
                     className={cn(
@@ -123,12 +120,7 @@ export default function BentoGrid({ items, onItemClick }: BentoGridProps) {
               </div>
             </div>
 
-            {/* Hover border glow */}
-            <div
-              className={cn(
-                "pointer-events-none absolute inset-0 rounded-none border-2 border-transparent transition-all duration-300 group-hover:border-white/30"
-              )}
-            />
+            <div className="pointer-events-none absolute inset-0 rounded-none border-2 border-transparent transition-all duration-300 group-hover:border-white/30" />
           </div>
         );
       })}

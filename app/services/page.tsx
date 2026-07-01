@@ -1,6 +1,18 @@
+import { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
+
+// 1. Export the metadata for this specific page
+export const metadata: Metadata = {
+  title: "Supply Taxonomy & Services",
+  description: "Standardized import, supply, and integration logistics across 12 distinct commercial infrastructure verticals operating within the Kingdom of Cambodia.",
+  openGraph: {
+    title: "Supply Taxonomy | SCC Group",
+    description: "Explore our 12 commercial infrastructure verticals, including heat and sound insulation, roofing, waterproofing, and more.",
+    url: "https://www.scc-group.asia/services", // Assuming this is your route
+  }
+};
 
 const verticals = [
   { cat: "Heat Insulation", items: ["Glasswool", "Rockwool", "Ceramic", "Bubble Foil", "XPS Foam", "Rubber", "Heat Paint"] },
@@ -35,17 +47,18 @@ export default function ServicesPage() {
             href="/"
             className="inline-flex items-center px-3 py-2 gap-2 text-sm font-bold text-red-500 hover:text-red-600 transition-colors mb-8 uppercase"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="currentColor" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="currentColor"></path></svg> Return
+            {/* Fixed SVG attributes: fill-rule -> fillRule, clip-rule -> clipRule */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="currentColor" fill="none" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="currentColor"></path></svg> Return
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             
             {/* Left 7 Columns: Massive Editorial Typography */}
             <div className="lg:col-span-7 space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-white">
-            Supply
-            <span className="text-red-600"> Taxonomy</span>
-          </h1>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-white">
+                Supply
+                <span className="text-red-600"> Taxonomy</span>
+              </h1>
             </div>
 
             {/* Right 5 Columns: Quoted Spec anchored to the H1 Baseline */}
@@ -53,8 +66,6 @@ export default function ServicesPage() {
               <p className="text-base sm:text-md text-left md:text-right text-zinc-600 dark:text-zinc-400  border-r-4 border-red-600 pr-4 font-sans">
                 Standardized import, supply, and integration logistics across 12 distinct commercial infrastructure verticals operating within the Kingdom of Cambodia.
               </p>
-              
-   
             </div>
 
           </div>
@@ -93,7 +104,7 @@ export default function ServicesPage() {
 
       </main>
 
-  <Footer />
+      <Footer />
     </div>
   );
 }

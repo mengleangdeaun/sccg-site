@@ -1,7 +1,21 @@
+// Remove "use client" from here to allow Metadata export
+import { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Link from "next/link";
-import CoreValuesBento from '@/components/corevalue';
+import CoreValuesBento from './components/CoreValue';
+import PhotoGroup from "./components/PhotoGroup";
+
+// Export page-specific metadata based on the page content
+export const metadata: Metadata = {
+  title: "The Mandate",
+  description: "Learn about SCC Group's mission, vision, and core values. Founded in 2007 through a collaboration between Cambodia & Singapore investors.",
+  openGraph: {
+    title: "The Mandate | SCC Group",
+    description: "Discover how SCC Group aims to make permanent, compounding positive changes to the lives of the people where we operate.",
+    url: "https://www.scc-group.asia/about", 
+  }
+}
 
 export default function AboutPage() {
   return (
@@ -20,22 +34,22 @@ export default function AboutPage() {
             href="/"
             className="inline-flex items-center px-3 py-2 gap-2 text-sm font-bold text-red-500 hover:text-red-600 transition-colors mb-8 uppercase"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="currentColor" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="currentColor"></path></svg> Return
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="currentColor" fill="none" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="currentColor"></path></svg> Return
           </Link>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-white">
             The
             <span className="text-red-600"> Mandate.</span>
           </h1>
         </div>
+        
         {/* Origin & Strategy */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-12 space-y-5 text-base sm:text-md text-zinc-600 dark:text-zinc-400">
             <p>
-              SCC Group is found through collaboration between Cambodia & Singapore investors. The team want to contribute to the development of Cambodia through business activities that solve major problems in the country since 2007. Due to hot weather in Cambodia , the team decided to focus on controlling heat as key focus. Over the years , the company imported and distributes various products including heat protection window films, rockwool & glass wool , acoustic foam , heat protective paints , roofing sheeting etc. 
-
+              SCC Group is found through collaboration between Cambodia & Singapore investors[cite: 1]. The team want to contribute to the development of Cambodia through business activities that solve major problems in the country since 2007[cite: 1]. Due to hot weather in Cambodia , the team decided to focus on controlling heat as key focus[cite: 1]. Over the years , the company imported and distributes various products including heat protection window films, rockwool & glass wool , acoustic foam , heat protective paints , roofing sheeting etc[cite: 1]. 
             </p>
             <p>
-              The team is looking to expand further to be the leading company to offer value to customers through quality products and services. Our main product includes heat insulation ,constructions materials and other materials and services.
+              The team is looking to expand further to be the leading company to offer value to customers through quality products and services[cite: 1]. Our main product includes heat insulation ,constructions materials and other materials and services[cite: 1].
             </p>
           </div>
         </div>
@@ -45,6 +59,7 @@ export default function AboutPage() {
           <span className="w-2 h-2 bg-red-600 inline-block mb-1"></span> Philosophy
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 border  mb-20">
+          
           {/* Mission */}
           <div className="p-7 border-b md:border-b-0 md:border-r bg-white dark:bg-zinc-950">
             <div className="w-8 h-8 bg-red-50 dark:bg-red-950/40 flex items-center justify-center mb-5">
@@ -54,7 +69,7 @@ export default function AboutPage() {
             </div>
             <p className="text-base font-medium text-red-600 dark:text-red-400 mb-2">MISSION</p>
             <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              We offer high-quality products and services that solve core infrastructure problems for our customers.
+              We offer high-quality products and services that solve core infrastructure problems for our customers[cite: 1].
             </p>
           </div>
 
@@ -67,7 +82,7 @@ export default function AboutPage() {
             </div>
             <p className="text-base font-medium text-red-600 dark:text-red-400 mb-2">VISION</p>
             <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-              To make permanent, compounding positive changes to the lives of the people where we operate our business.
+              To make permanent, compounding positive changes to the lives of the people where we operate our business[cite: 1].
             </p>
           </div>
 
@@ -80,7 +95,7 @@ export default function AboutPage() {
             </div>
             <p className="text-base font-medium text-red-600 dark:text-red-400 mb-2">THE DREAM</p>
             <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-             SCC Group will be a vibrant international company that combines people with great talents from different culture and expertise to make meaningful and valuable products, services that will improve the quality of life for our customers.
+             SCC Group will be a vibrant international company that combines people with great talents from different culture and expertise to make meaningful and valuable products, services that will improve the quality of life for our customers[cite: 1].
             </p>
           </div>
         </div>
@@ -89,9 +104,10 @@ export default function AboutPage() {
           <span className="w-2 h-2 bg-red-600 inline-block mb-1"></span> Core Values
         </p> 
 
-
-<CoreValuesBento />
+        <CoreValuesBento />
       </main>
+      
+      <PhotoGroup />
 
       <Footer />
     </div>

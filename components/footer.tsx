@@ -9,20 +9,22 @@ export default function Footer() {
       {/* =========================================================
           1. COMPACT SLOGAN BAR (Side-by-Side on Desktop)
       ========================================================== */}
-      <div className="border-b  border-zinc-200 dark:border-white/10 py-10 px-6 relative overflow-hidden">
-        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-72 h-72 bg-red-600/10 blur-[100px] pointer-events-none z-0"></div>
+      <div className="border-b border-zinc-200 dark:border-white/10 py-10 px-6 relative overflow-hidden">
+        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-72 h-72 bg-red-700/10 dark:bg-red-600/10 blur-[100px] pointer-events-none z-0"></div>
 
         <div className="max-w-7xl px-6 mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight uppercase leading-none text-zinc-900 dark:text-white">
               Keep Doing.{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 via-red-500 to-red-600">
+              {/* CRITICAL FIX: Shifted to from-red-700 via-red-600 to-red-700 for accessible light mode contrast */}
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-red-600 via-red-500 to-red-600 dark:from-red-500 dark:via-red-500 dark:to-red-600">
                 Keep Creating.
               </span>
             </h2>
           </div>
           
-          <div className="md:max-w-xs text-[11px] font-mono font-light text-zinc-500 dark:text-zinc-400 border-l border-zinc-300 dark:border-zinc-800 pl-4 py-0.5 leading-normal">
+          {/* OPTIMIZATION: Shifted light mode text from zinc-500 to zinc-600 */}
+          <div className="md:max-w-xs text-[11px] font-mono font-light text-zinc-600 dark:text-zinc-400 border-l border-zinc-300 dark:border-zinc-800 pl-4 py-0.5 leading-normal">
             COMBINING SINGAPORE STRATEGY WITH CAMBODIAN INFRASTRUCTURE EXPERTISE.
           </div>
         </div>
@@ -35,16 +37,17 @@ export default function Footer() {
         
         {/* Col A: Headquarters */}
         <div className="space-y-3">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-red-600 inline-block"></span>
+          {/* OPTIMIZATION: Shifted light mode text from zinc-400 to zinc-600 */}
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Headquarters
           </div>
-          <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+          <p className="text-zinc-800 dark:text-zinc-300 leading-relaxed">
             SCC Group Cambodia HQ<br />
             #80C Street 310, Toul Svay Prey II,<br />
             Phnom Penh, Kingdom of Cambodia
           </p>
-          <div className="text-[10px] font-mono text-zinc-400">
+          <div className="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">
             <a
               href="https://www.google.com/maps/search/?api=1&query=11.55556768380531,104.90690015252773"
               target="_blank"
@@ -58,17 +61,18 @@ export default function Footer() {
 
         {/* Col B: Telecommunications */}
         <div className="space-y-3">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-red-600 inline-block"></span>
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Contact Us
           </div>
           <div className="space-y-2 font-mono text-xs pt-0.5">
-            <div className="flex justify-between border-b border-zinc-200 dark:border-white/5 pb-1.5">
-              <span className="text-zinc-400">Phone Number:</span>
+            <div className="flex justify-between border-b border-zinc-300 dark:border-white/5 pb-1.5">
+              <span className="text-zinc-600 dark:text-zinc-400">Phone Number:</span>
               <span className="text-zinc-900 dark:text-white font-medium">+855 (0) 89 222 027</span>
             </div>
-            <div className="flex justify-between border-b border-zinc-200 dark:border-white/5 pb-1.5">
-              <span className="text-zinc-400">Email:</span>
+            <div className="flex justify-between border-b border-zinc-300 dark:border-white/5 pb-1.5">
+              <span className="text-zinc-600 dark:text-zinc-400">Email:</span>
+              {/* CRITICAL FIX: Shifted light mode text from red-600 to red-700 */}
               <span className="text-red-600 dark:text-red-400 font-bold">sccg.cambodia@gmail.com</span>
             </div>
           </div>
@@ -76,12 +80,11 @@ export default function Footer() {
 
         {/* Col C: Social Nodes */}
         <div className="space-y-3 flex flex-col items-start md:items-end md:text-right">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-red-600 inline-block"></span>
+          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-500 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             Our Socials
           </div>
           
-          {/* Razor-Sharp 36px Squares (w-9 h-9) */}
           <div className="flex gap-1.5 pt-0.5 md:justify-end">
             
             {/* LinkedIn */}
@@ -89,7 +92,7 @@ export default function Footer() {
               href="https://linkedin.com" 
               target="_blank" 
               rel="noreferrer" 
-              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white dark:hover:border-red-600 transition-all rounded-none"
+              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-500 dark:hover:text-white dark:hover:border-red-500 transition-all rounded-none"
               aria-label="LinkedIn"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -99,10 +102,10 @@ export default function Footer() {
 
             {/* Telegram */}
             <a 
-              href="https://telegram.org" 
+              href="https://t.me/SCCHiring" 
               target="_blank" 
               rel="noreferrer" 
-              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white dark:hover:border-red-600 transition-all rounded-none"
+              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-500 dark:hover:text-white dark:hover:border-red-500 transition-all rounded-none"
               aria-label="Telegram"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -112,10 +115,10 @@ export default function Footer() {
 
             {/* Facebook */}
             <a 
-              href="https://facebook.com" 
+              href="https://www.facebook.com/SCCrecruitment07/" 
               target="_blank" 
               rel="noreferrer" 
-              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white dark:hover:border-red-600 transition-all rounded-none"
+              className="w-9 h-9 bg-zinc-200/60 dark:bg-zinc-900 border border-zinc-300 dark:border-white/10 flex items-center justify-center text-zinc-700 dark:text-zinc-300 hover:bg-red-600 hover:text-white dark:hover:bg-red-500 dark:hover:text-white dark:hover:border-red-500 transition-all rounded-none"
               aria-label="Facebook"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -131,14 +134,14 @@ export default function Footer() {
       {/* =========================================================
           3. SLIM COPYRIGHT BAR
       ========================================================== */}
-      <div className="border-t border-zinc-200 dark:border-white/10 py-4 px-6 bg-zinc-100 dark:bg-black text-[10px] font-mono text-zinc-500">
+      <div className="border-t border-zinc-300 dark:border-white/10 py-4 px-6 bg-zinc-100 dark:bg-black text-[10px] font-mono text-zinc-600 dark:text-zinc-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-red-600 inline-block"></span>
+            <span className="w-1.5 h-1.5 bg-red-600 dark:bg-red-500 inline-block"></span>
             <span className="tracking-wider text-zinc-800 dark:text-zinc-300 font-semibold">SCC GROUP CAMBODIA</span>
-            <span className="text-zinc-400 dark:text-zinc-600">• SINGAPORE COLLABORATION</span>
+            <span className="text-zinc-500 dark:text-zinc-600">• SINGAPORE COLLABORATION</span>
           </div>
-          <div className="tracking-widest uppercase opacity-70">
+          <div className="tracking-widest uppercase opacity-70 text-zinc-700 dark:text-inherit">
             © {currentYear} ALL RIGHTS RESERVED.
           </div>
         </div>
