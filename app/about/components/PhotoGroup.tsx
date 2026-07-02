@@ -246,19 +246,19 @@ export default function PhotoGroup() {
           </span>
         </h2>
         <p className="mx-auto mt-3 max-w-md text-sm text-zinc-800 dark:text-white/35 sm:text-base">
-          Each tile is a real photo from our journey — together they form who we
+          Each tile is a real photo from our journey <br/> together they form who we
           are.
         </p>
       </div>
 
       {/* Mosaic grid — constrained to max-w-4xl, centered */}
-      <div className="relative mx-auto flex justify-center px-4 sm:px-6">
+      <div className="relative mx-auto flex justify-center px-3.5 sm:px-6">
         <div
           className="mosaic-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: `repeat(${totalW}, 12px)`,
-            gridTemplateRows: `repeat(${totalH}, 12px)`,
+            gridTemplateColumns: `repeat(${totalW}, 10px)`,
+            gridTemplateRows: `repeat(${totalH}, 10px)`,
             gap: "2px",
           }}
         >
@@ -314,7 +314,7 @@ export default function PhotoGroup() {
           .mosaic-grid {
             grid-template-columns: repeat(${totalW}, 20px) !important;
             grid-template-rows: repeat(${totalH}, 20px) !important;
-            gap: 3px !important;
+            gap: 2px !important;
           }
         }
         @media (min-width: 1024px) {

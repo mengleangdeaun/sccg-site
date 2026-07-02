@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/DNA.jpg", 
+        url: "https://www.scc-group.asia/DNA.jpg", 
         width: 1200,
         height: 630,
         alt: "SCC Group Cambodia",
